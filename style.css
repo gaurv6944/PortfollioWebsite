@@ -1,0 +1,706 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrapper{
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container{
+    width: 1200px;
+    /* container should be centre */
+    margin: 0 auto;
+}
+.navbar{
+    display: flex; 
+    /* for horizontal line */
+    justify-content: space-between;
+    /* vertically centre */
+    align-items: center; 
+    padding-top: 1rem;
+
+}
+.logocontainer{
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+
+}
+.logo{
+    width: 60px;
+    margin-top: -16px;
+    
+}
+.logotext{
+    margin-left: -1.2rem;
+    font-size: 28px;
+    padding: 3px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.navitem{
+    display: flex;
+    gap: 2rem;
+    padding: 0 4rem;
+}
+.navitem div{
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.navitem div a{
+    color: black;
+ 
+}
+a{
+    text-decoration: none;
+}
+.navitem div:hover{
+    transition: 0.8s;
+    font-weight: bold;
+}
+.herosection{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    padding-bottom: 8rem;
+}
+.fadedtext{
+    /* if we want that none can select this text */
+    position: absolute;
+    user-select: none;
+    margin: 100px;
+    font-size: 7rem;
+    color: rgb(231, 231, 231) ;
+    bottom: -16%;
+    left: -5%;
+    font-weight: bold;
+    transition: all 3s;
+}
+.herosectionleft{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+.herosectionheading{
+    font-size: 35px;
+    color: #343d68;
+    font-weight: 500;
+}
+.role{
+    color: #4e45d5;
+    font-weight: 800;
+}
+.herosectionsubheading{
+    font-size:45px ;
+    line-height: 45px;
+}
+.herosectiondescription{
+    margin-top: 1rem;
+    width: 70%;
+    font-weight: 500;
+}
+.btnpink{
+
+    background-color: #e84949;
+    padding: 0.8rem 2.3rem;
+    color: white;
+    font-size: 18px;
+    box-shadow:5px 5px 7px 0px #0000003f ;
+    position: relative;
+    z-index: 1;
+    width: 150px;
+
+}
+/* using before pseudo selector we add some conntent before above content */
+.btnpink::before{
+
+    content: "";
+    background-color: #1f1f1f;
+    position: absolute;
+
+    /* we want to fill whole div */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 1s;
+    z-index: -1;
+
+}
+.btnpink:hover::before{
+
+transform: scaleX(1);
+cursor: pointer;
+}
+
+.herosectionright{
+    position: relative;
+
+}
+.absolute{
+    position: absolute;
+}
+.userimage{
+    padding: 2.5rem;
+    /* for color changing of photo  */
+    filter: grayscale(1);
+    transition: all 1s;
+    animation: scaleImage 5s linear infinite;
+    
+}
+.userimage img{
+    z-index: -9;
+}
+@keyframes scaleImage{
+    0%{
+        filter: grayscale(0);
+        transform: scale(1);
+
+    }
+
+    50%{
+        transform: scale(1.1);
+        filter: grayscale(1);
+        box-shadow: 3px 3px 10px black ;
+
+
+    }
+
+    100%{
+        transform: scale(1);
+        filter: grayscale(0);
+
+
+    }
+}
+.icon-dots{
+    z-index: 9;
+    bottom: 7rem;
+    right: 10rem;
+    
+    animation-name: dotsAnimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+
+}
+@keyframes dotsAnimation{
+    0%{
+transform: scaleY(0px);
+    }
+    50%{
+        transform: scaleY(-15px);
+
+    }
+    100%{
+        transform: scaleY(0);
+
+    }
+
+}
+.icon-cube{
+    z-index: 9;
+    top: -0.8rem;
+    right: 11rem;
+    animation-name: cubeanimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+
+}
+@keyframes cubeanimation{
+    0%{
+
+        transform: rotateY(0deg) translateY(0px);
+
+    }
+    50%{
+        transform: rotateY(180deg) translateY(-12px);
+
+    }
+    100%{
+        transform: rotateY(0deg) translateY(0px);
+    }
+}
+.icon-circle{
+    z-index: 9;
+    margin: 0;
+    right: 0;
+    top: 0;
+   
+    animation-name: shakeeffect;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes shakeeffect{
+   
+    50%{
+    left: 5%;
+    bottom: 10%;
+
+    }
+  
+   
+}
+.icon-zigzag{
+    z-index: 9;
+    top: 1.5rem;
+    left: -0.3rem;
+  
+    animation: zigzaganimation 5s ease-in infinite;
+
+}
+
+@keyframes zigzaganimation{
+
+    50%{left: 5%;
+        top: 2%;
+
+    }
+
+
+}
+.icon-plus{
+    z-index: 9;
+    top: -0.8rem;
+    left: 76%;
+    right: 70px;
+} 
+.projectsection
+{
+    background-color: rgb(231, 231, 231);
+    margin-top: 4rem;
+}
+.pageheader{
+    color:rgb(255, 8, 0);
+    font-size: 90px;
+    text-align: center;
+    padding-top: 30px;
+
+}
+.projectcontainer{
+    max-width: 1200px;
+    /* centre me place krne ke liye auto  */
+    margin: 0 auto;
+    padding: 3rem 0;
+    display: flex;
+    flex-direction:column ;
+    gap: 120px;
+
+}
+
+.projectcard{
+    /* card ne container k 90 percent width li hai */
+    width: 90%;
+    height: 550px;
+    background-image: url(./images/projects/Project2.png);
+    /* koi image agar chhoti hai to vo bar bar repeat kr jati hai to usko rokne ke liye */
+      background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0px 0px 40px #1f1f1f;
+    
+    
+}
+/* after k concept use hua black tint ke liye */
+/*  */
+.projectcard::after{
+    /* when we before or after then we have to define content and here is no content  */
+    content:"";
+    position: absolute;
+
+    /*  before and after psuido selector ko puri image cover karne ke liye margin 0 krni hogi */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1f1f1f9a;
+    transform: scaleX(1);
+    z-index: 0 ;
+}
+
+/* */
+  .projectcard::before{
+    /* before k concept use hua hai sliding ke liye */
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(45deg,#343d68,#343d68be,#343d687c);
+    /* hame blue color k filter normaly nahi dikhna chahiye so tranform zero krna padega */
+    transform: scaleX(0);
+
+    transform-origin: left;
+    transition: all 0.4s;
+    z-index: 1;
+
+}
+/* uper wala code tabhi chalna chahiye jab us pr hover kare */
+
+.projectcard:hover::before{
+    transform: scaleX(1);
+}
+/* jisko overlap karana hota hai ushki position absolute krte hai jiske uper overlap karanhota hai uski position relative krte hain */
+.projectnumber{
+     
+    position: absolute;
+    font-size: 200px;
+    font-weight: 600;
+    color: white;
+    z-index: 10;
+    display: none;
+
+}
+.projectnumber-right{
+    right: -40px;
+    top: -45px;
+}
+.projectcard:hover .projectnumber-right {
+    display: block;
+    /* opacity: 1; */
+}
+
+.projectcard:hover .projectnumber-left{
+    display: block;
+}
+.projectnumber-left{
+    left: -40px;
+    top: -45px;
+
+}
+.projectcontent{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 2em;
+    bottom: 20%;
+    z-index: 5;
+    gap: 1em;
+    transition: all 0.4s;
+
+}
+/* project me jo content hai usko left and right likhne ke liye */
+.projectcontentleft{
+
+    left: 10%;
+}
+.projectcontentright{
+    right: 10%;
+}
+/* jab bhi main card par hover karu to content scale ho */
+.projectcard:hover .projectcontent{
+    transform: scale(1.1);
+}
+.projectskillcontainer{
+    width: 60%;
+    display: flex;
+    gap: 10px;
+    /* if icon eik sigle width me n aa paye to vo next line me shift ho jaye */
+    flex-wrap: wrap;
+    
+ 
+}
+.projectskills{
+
+    width: 40px;
+
+}
+.projectheading{
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 3rem;
+
+     
+}
+.projectsubheading{
+    width: 70%;
+    font-size: 16px;
+    font-style:italic ;
+
+}
+.btngrp{
+    display: flex;
+    gap: 0.9rem;
+    align-items: center;
+}
+.btn-project{
+    border: none;
+
+}
+.icon{
+    cursor: pointer;
+    color: white;
+    font-size: 35px;
+}
+.icon:hover{
+    color:rgb(255, 0, 0);
+
+}
+/* card ke uper hover krne se projectcontent scale hona chahiye */
+.projectcard:hover .projectcontent{
+    transform: scale(1.1);
+}
+#project1{
+    background-image: url(./images/projects/Project1.png);
+}
+#project2{
+    margin-left: 120px;
+    /* margin-top: 80px; */
+    
+    background-image: url(./images/projects/Project2.png);
+}
+#project3{
+    margin-top: 80px;
+    background-image: url(./images/projects/Project3.png);
+}
+#project4{
+    margin-left: 120px;
+    /* margin-top: 80px; */
+    background-image: url(./images/projects/Project4.png);
+}
+ @media(max-width:1300px)
+ {
+    .pageheader{
+        padding-top: 30px;
+        color:orangered;
+        text-align: center;
+        font-size: 40px;
+    }
+    .projectcontainer{
+        padding: 5px;
+        margin: 10px;
+        gap: 60px;
+    }
+    .projectcard{
+        width: 100%;
+        height: 300px;
+    } 
+    .projectcard{
+        background-size: cover;
+        background-position: center;
+    }
+    .projectcontentleft{
+        left: 0;
+    }
+    .projectheading{
+        font-size: 40px;
+        width: 100%;
+    }
+    .projectsubheading{
+        width: 100%;
+    }
+    #project2 {
+        margin-left: 0;
+    }
+    .project4 {
+        margin-left: 0;
+    }
+    .projectskillcontainer{
+        width: 100%;
+    }
+    .projectskill {
+        width: 35px;
+    }
+    .projectcard:hover .projectnumber{
+        display: none;
+    }
+    .projectcard:hover .projectcontent {
+        scale: 0.55;
+    }
+ }
+
+ /* skills part */
+
+ .skillscontainer{
+    position: relative;
+    display: flex;
+    padding: 5rem;
+    margin: 10rem auto;
+    gap: 30px;
+ }
+ .skillcontainerleft{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+ }
+ .skillcontainerright{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    position: relative;
+    gap: 2rem;
+    justify-content: center;
+ }
+ .skillfadetext{
+    position: absolute;
+    font-size: 15rem;
+    font-style: bold;
+    color: rgb(231, 231, 231);
+    bottom: -28.5%;
+    right: -25%;
+    user-select: none;
+    overflow-y: hidden;
+ }
+ .blobstyle{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    animation: blobanimate 3s linear infinite;
+    z-index: -6;
+
+ }
+ @keyframes blobanimate {
+    50%{
+        top: 54%;
+        left: 46%;
+    }
+    
+ }
+ .skillslogo{
+    width: 90px;
+    transition: all 0.5s;
+     
+ }
+ .skillslogo:hover{
+    transform: scale(1.2);
+ }
+ .skillheading{
+    font-size: 50px;
+    font-style: bold;
+    color: #e84949;
+    line-height: 50px;
+ }
+ .caps{
+    font-size: 90px;
+ }
+ .skillsubheading{
+    margin-top: 1rem;
+    width: 85%;
+    text-align: justify;
+
+ }
+ .skillsubheading p{
+    margin: 15px 0;
+
+ }
+
+/* contact us portion */
+.contactus-form-container {
+    width: 100%;
+    background-color:rgb(231, 231, 231);
+}
+.conatactusheading{
+    font-size: 5rem;
+    color: #e84949;
+    padding-top: 2rem;
+
+}
+.contactussubheading{
+    font-size: 3rem;
+    color: #343d68aa;
+   text-transform: capitalize;
+}
+.contactusformcontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 70%;
+    margin:2rem 5rem ;
+
+}
+.formfieldcontainer {
+    width: 100%;
+}
+.formfield {
+    width: 100%;
+    height: 42px;
+    padding: 0 2rem;
+    font-size: 18px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px #1f1f1f;
+    font-weight: 500;
+    border: none;
+    margin-top:17px ;
+}
+.formfieldtextarea {
+    height: auto;
+    padding-top: 1rem;
+    font-size: 1.2rem;
+}
+#submitbtn {
+    border:none;
+    font-size: 1.8rem;
+    margin: 1rem 0;
+    width:300px;
+}
+#submitbtn:hover{
+    scale:0.9;
+}
+.submiticon{
+    /* padding: 0 rem; */
+    font-size: 1.5rem;
+    
+}
+
+/* footer section */
+footer{
+    position: relative;
+    margin-top: 1px;
+    background-color: #343d68;
+    padding:5rem ;
+
+}
+.footerwrapper{
+    display: flex;
+    gap: 1rem;
+    padding: 1.2rem;
+    justify-content: space-between;
+    align-items: centre;
+}
+
+.footerfadetext{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: #535c87;
+    user-select: none;
+    font-size: 5rem;
+}
+.linkwrapper{
+    display: flex;
+    gap: 1.2rem;
+}
+.linkwrapper div a{
+    /* font-size: 25px; */
+    color: white;
+    text-decoration: none;
+    transition: all 0.6s;
+}
+.linkwrapper div a:hover{
+    color:rgb(255, 47, 0) ;
+}
+.iconwrapper{
+    display: flex;
+    gap: 1rem;
+}
